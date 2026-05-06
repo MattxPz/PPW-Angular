@@ -109,5 +109,5 @@ export const routes: Routes = [
 
 ---
 
-##  Autor
+##  Autor - Mateo Paez
 Proyecto base para práctica incremental en Angular
