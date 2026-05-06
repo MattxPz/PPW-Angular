@@ -1,59 +1,113 @@
-# PpwAngular21
+#  Proyecto Angular 21 – Base Incremental
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+##  Objetivo
+Crear el proyecto **ppw-angular-21** con Angular 21, habilitando routing y estableciendo una estructura base escalable para futuras prácticas.
 
-## Development server
+---
 
-To start a local development server, run:
+##  Características
+-  Proyecto Angular 21 configurado correctamente
+-  Routing habilitado desde el inicio
+-  Estructura modular con enfoque en features
+-  Componente inicial HomePage
+-  Base preparada para crecimiento
 
-```bash
-ng serve
+---
+
+##  Creación del Proyecto
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+ng new ppw-angular-21 --routing --style=scss --ssr=false
+cd ppw-angular-21
+pnpm install
+pnpm start
 ```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+##  Estructura del Proyecto
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
+src/
+  app/
+    app.config.ts
+    app.routes.ts
+    app.ts
+    features/
+      home/
+        pages/
+          home-page.ts
 ```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+##  Implementación
 
-## Running unit tests
+### 1. Crear componente HomePage
+Archivo:
+src/app/features/home/pages/home-page.ts
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+Código:
 ```
+import { Component } from '@angular/core';
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+@Component({
+  selector: 'app-home-page',
+  template: `
+    <section>
+      <h1>PPW Angular 21</h1>
+      <p>Proyecto incremental listo para crecer.</p>
+    </section>
+  `,
+})
+export class HomePage {}
 ```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 2. Configurar rutas
+Archivo:
+src/app/app.routes.ts
 
-## Additional Resources
+Código:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```
+import { Routes } from '@angular/router';
+import { HomePage } from './features/home/pages/home-page';
+
+export const routes: Routes = [
+  {
+    path: '',
+    component: HomePage,
+  },
+];
+```
+---
+
+##  Routing
+- Ruta principal: `/`
+- Carga el componente HomePage
+- Preparado para múltiples rutas futuras
+
+---
+
+##  Validación
+-  La app inicia sin errores
+-  HomePage se renderiza correctamente
+-  Routing funcional
+-  Estructura organizada y escalable
+
+---
+
+##  Decisiones de Arquitectura
+- Uso de carpeta `features/` para modularidad
+- Separación de rutas en `app.routes.ts`
+- Componentes desacoplados
+
+---
+
+##  Notas Técnicas
+- Angular 21
+- SCSS habilitado
+- SSR deshabilitado
+- Uso de pnpm
+
+---
+
+##  Autor
+Proyecto base para práctica incremental en Angular
