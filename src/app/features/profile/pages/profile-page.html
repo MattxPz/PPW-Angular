@@ -1,0 +1,33 @@
+<!-- Paso 2: Mostrar datos -->
+<h1>{{ fullName() }}</h1>
+<p>Edad: {{ age() }}</p>
+
+<!-- Paso 3: Botón de actualización -->
+<button type="button" (click)="changeData()">Cambiar datos</button>
+
+<!-- Paso 4: Renderizado de listas con @for -->
+@if (skills().length > 0) {
+  <ul>
+    @for (skill of skills(); track skill) {
+      <li>{{ skill }}</li>
+    }
+  </ul>
+} @else {
+  <p>No hay habilidades registradas.</p>
+}
+
+<!-- Paso 5: Clasificación con @switch -->
+@switch (ageCategory()) {
+  @case ('minor') {
+    <p>Estado: Menor de edad</p>
+  }
+  @case ('young') {
+    <p>Estado: Joven</p>
+  }
+  @case ('adult') {
+    <p>Estado: Adulto</p>
+  }
+  @default {
+    <p>Estado: Senior</p>
+  }
+}
